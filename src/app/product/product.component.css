@@ -1,0 +1,16 @@
+.product-detail {
+  border: 2px solid #424242;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  padding: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.product-detail .form-group {
+  margin-bottom: 5px;
+}
+.product-detail .form-group a {
+  position: absolute;
+  top: 70%;
+  left: 85%;
+}
