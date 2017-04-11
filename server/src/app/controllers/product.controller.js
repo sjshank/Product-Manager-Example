@@ -48,4 +48,27 @@ exports.getProductList = function (req, res) {
 
 exports.deleteProduct = function (req, res) {
 
+  Product.findOneAndRemove()
+    .where('id')
+    .equals(req.params.id)
+    .exec()
+    .then(function (product) {
+      console.log(product)
+      if (!product) {
+        res.json({
+          result: false,
+          msg: "Product not found"
+        });
+      } else {
+        res.json({
+          result: true
+        });
+      }
+    })
+    .catch(function (e) {
+      res.json({
+        result: false,
+        msg: "Error occurred !"
+      });
+    });
 }

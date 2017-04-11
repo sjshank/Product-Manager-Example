@@ -16,7 +16,8 @@ router.route('/list')
 
 
 router.route('/delete/:id')
-        .post(function(req, res){
+        .delete(function(req, res){
+            
             productController.deleteProduct(req, res);
         })
 
