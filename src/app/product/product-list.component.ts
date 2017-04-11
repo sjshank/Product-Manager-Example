@@ -12,17 +12,29 @@ export class ProductListComponent implements OnInit {
   constructor(private _productService: ProductService) { }
 
   ngOnInit() {
-     this._getProductList();
+    this._getProductList();
   }
 
   private _getProductList() {
     this._productService.list()
       .subscribe(data => {
-         this.products = data.list;
+        this.products = data.list;
       },
       error => {
         console.log(error);
       })
+  }
+
+  deleteProduct(event): void {
+    this._productService.delete(event.id)
+      .subscribe(data => {
+        if (data) {
+          this._getProductList();
+        }
+      },
+      error => {
+        console.log(error);
+      });
   }
 
 }

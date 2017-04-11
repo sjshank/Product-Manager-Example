@@ -2,7 +2,7 @@
   <h2>{{title}}</h2>
   <div *ngIf="products">
     <div class="row" *ngFor="let product of products">
-      <app-product-detail [product]="product"></app-product-detail> 
+      <app-product-detail [product]="product" (onDeleteProduct)="deleteProduct($event)"></app-product-detail> 
     </div>
   </div>
 </div>

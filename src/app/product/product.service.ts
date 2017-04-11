@@ -31,8 +31,8 @@ export class ProductService{
                 .map((res: Response) => <any>res.json());
     };
 
-    delete(model): Observable<any>{
-        return this._http.delete(`${this.url.delete}`, model)
+    delete(id): Observable<any>{
+        return this._http.delete(`${this.url.delete}${id}`)
                .map((res: Response) => <any>res.json());
     };
 }
